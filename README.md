@@ -6,6 +6,12 @@ This version wraps the **original, unchanged pipeline** (`src/`, `main.py`) in a
 **React + TypeScript** frontend. The original Flask dashboard (`app.py`) is kept for reference; see
 [README_ORIGINAL.md](README_ORIGINAL.md).
 
+## Demo video
+🎥 **Watch the walkthrough:** _YouTube link coming soon_ <!-- TODO: replace with https://youtu.be/<id> -->
+
+The repository ships with pre-generated sample output in `output/` (events, company graph, SQLite database), so the
+dashboard is populated the moment you start the app, with no scraping needed. Use **Scrape & Analyze → Live** to pull fresh articles.
+
 ```
 React (Vite) ──REST──▶ FastAPI services ──▶ original src/ (crawler, classifier, extractor, company_tree, db) ──▶ SQLite + output/
 ```
@@ -47,5 +53,9 @@ cd ..; .\.venv\Scripts\python -m unittest test_pipeline  # 7 original tests
 ## Data note
 “Live” mode crawls real RSS feeds (BBC, SEC, Economic Times, Moneycontrol, Livemint). “Offline” mode uses the
 articles bundled in `data/`.
+
+## Pages
+Dashboard · News Feed (classified events) · Companies · Company Profile · Relationship Graph (click a company for a full breakdown) ·
+Analytics · Scrape & Analyze (background jobs, live or offline) · Settings (data sources & crawler policy).
 
 More: [ARCHITECTURE.md](ARCHITECTURE.md) · [API_DOCUMENTATION.md](API_DOCUMENTATION.md) · [MIGRATION_REPORT.md](MIGRATION_REPORT.md) · [FEATURE_PARITY.md](FEATURE_PARITY.md) · [DEMO_GUIDE.md](DEMO_GUIDE.md) · [BASELINE_REPORT.md](BASELINE_REPORT.md)

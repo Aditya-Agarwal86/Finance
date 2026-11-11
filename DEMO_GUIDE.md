@@ -1,5 +1,9 @@
 # Demo Guide
 
+Video walkthrough: _YouTube link coming soon_ (see README).
+
+Pre-generated sample output is committed in `output/`, so everything is populated on first start. News Feed and Settings (data sources) pages are included in the tour below.
+
 1. Start: `.\start-backend.cmd` (wait for “Application startup complete”), then `.\start-frontend.cmd`; open http://localhost:5173. The sidebar shows **API online**.
 2. **Dashboard** – totals, event mix, recent events.3. **Companies** – search “Atlas”; try filters (event type, ≥ $500M); open **Atlas Logistics**.
 4. **Profile** – deal chart, NLP brief/highlights/confidence, and the ownership ego-graph (click nodes).
