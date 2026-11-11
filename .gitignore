@@ -42,3 +42,8 @@ extracted-project/
 output/test_*.db
 *.zip
 
+
+output/*.db-shm
+output/*.db-wal
+frontend/node_modules/
+frontend/dist/
