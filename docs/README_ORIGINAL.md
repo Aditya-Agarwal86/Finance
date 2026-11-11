@@ -5,7 +5,7 @@
 [![Machine Learning](https://img.shields.io/badge/ML-scikit--learn-orange.svg?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Graph Analysis](https://img.shields.io/badge/Graphs-NetworkX-darkblue.svg)](https://networkx.org/)
 [![Web Scraping](https://img.shields.io/badge/Scraping-BeautifulSoup%20%2B%20Feedparser-brightgreen.svg)](https://www.crummy.com/software/BeautifulSoup/)
-[![Dashboard](https://img.shields.io/badge/UI-Interactive%20Dashboard-purple.svg)](output/dashboard.html)
+[![Dashboard](https://img.shields.io/badge/UI-Interactive%20Dashboard-purple.svg)]($(("../")+"`output"))/dashboard.html)
 [![Presentation Mode](https://img.shields.io/badge/Demo-Guided%20Presentation%20Mode-success.svg)](#-presentation-mode--academic-viva-demo)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 
@@ -54,11 +54,11 @@ Financial news is voluminous, fast-moving, and predominantly unstructured. Marke
 
 | Workspace | Component | Description | Module |
 | :--- | :--- | :--- | :--- |
-| **Event Intelligence Feed** | Multi-Faceted News Feed | Multi-category filtering (`Acquisitions`, `Mergers`, `Divestitures`, `Hostile Takeovers`, `Leadership`, `IPOs`), real-time search, value sorting, and slide-over dossier inspector. | [`src/dashboard.py`](src/dashboard.py) |
-| **Relationship Explorer** | Native Vector SVG Graph | Interactive SVG graph featuring pan/zoom, node drag-and-pin, entity search, and 1-click counterparty highlight with dynamic ownership provenance badges. | [`src/company_tree.py`](src/company_tree.py) |
-| **Financial Analytics** | Pure SVG Visualizations | Capital volume bars, deal structure breakdown, deal lifecycle donut, and corporate dealmaker leaderboard with strict USD ($) and INR (₹) currency isolation. | [`src/dashboard.py`](src/dashboard.py) |
-| **Pipeline Diagnostics** | Operational Health Monitor | 5-stage sequential execution tracker, real RSS feed connectivity table with `robots.txt` checks, 25% hold-out model evaluation, and structured diagnostic logs. | [`app.py`](app.py) |
-| **Presentation Mode** | Guided 6-Step Showcase | Full-screen interactive demo mode with step dots, previous/next controls, collapsible speaker viva notes, and UI spotlighting. | [`src/dashboard.py`](src/dashboard.py) |
+| **Event Intelligence Feed** | Multi-Faceted News Feed | Multi-category filtering (`Acquisitions`, `Mergers`, `Divestitures`, `Hostile Takeovers`, `Leadership`, `IPOs`), real-time search, value sorting, and slide-over dossier inspector. | [`src/dashboard.py`]($(("../")+"`src"))/dashboard.py) |
+| **Relationship Explorer** | Native Vector SVG Graph | Interactive SVG graph featuring pan/zoom, node drag-and-pin, entity search, and 1-click counterparty highlight with dynamic ownership provenance badges. | [`src/company_tree.py`]($(("../")+"`src"))/company_tree.py) |
+| **Financial Analytics** | Pure SVG Visualizations | Capital volume bars, deal structure breakdown, deal lifecycle donut, and corporate dealmaker leaderboard with strict USD ($) and INR (₹) currency isolation. | [`src/dashboard.py`]($(("../")+"`src"))/dashboard.py) |
+| **Pipeline Diagnostics** | Operational Health Monitor | 5-stage sequential execution tracker, real RSS feed connectivity table with `robots.txt` checks, 25% hold-out model evaluation, and structured diagnostic logs. | [`app.py`]($(("../")+"`app.py"))) |
+| **Presentation Mode** | Guided 6-Step Showcase | Full-screen interactive demo mode with step dots, previous/next controls, collapsible speaker viva notes, and UI spotlighting. | [`src/dashboard.py`]($(("../")+"`src"))/dashboard.py) |
 
 ---
 
@@ -219,7 +219,7 @@ python main.py --mode sample --retrain
 ```
 
 ### Direct Local HTML File Execution (Offline Mode)
-The compiled presentation dashboard [`output/dashboard.html`](output/dashboard.html) is self-contained with embedded JSON fixtures and inline vector SVG rendering. You can double-click and open it directly in Google Chrome, Microsoft Edge, or Mozilla Firefox without launching Flask:
+The compiled presentation dashboard [`output/dashboard.html`]($(("../")+"`output"))/dashboard.html) is self-contained with embedded JSON fixtures and inline vector SVG rendering. You can double-click and open it directly in Google Chrome, Microsoft Edge, or Mozilla Firefox without launching Flask:
 - On Windows: `start output/dashboard.html`
 - *Note:* The Event Feed, Relationship Explorer, Financial Analytics, and Presentation Mode work 100% offline. Live RSS connectivity checking and execution triggers require the Flask server (`python app.py`).
 
@@ -300,7 +300,7 @@ When running `python app.py`:
 
 ## 📦 Output Artifacts & File Inventory
 
-All generated outputs are saved to the [`output/`](output/) directory:
+All generated outputs are saved to the [`output/`]($(("../")+"`output"))/) directory:
 
 1. **`output/dashboard.html`**: Self-contained presentation dashboard containing all 5 workspaces, SVG charts, and Presentation Mode.
 2. **`output/events.json`**: Structured corporate event intelligence objects with parties, values, dates, and executive briefs.
@@ -316,7 +316,7 @@ All generated outputs are saved to the [`output/`](output/) directory:
 
 ## 🧪 Automated Testing & Verification
 
-The project includes a comprehensive regression test suite in [`test_pipeline.py`](test_pipeline.py) covering classification, extraction, graph theory, database persistence, and dashboard markup integrity.
+The project includes a comprehensive regression test suite in [`test_pipeline.py`]($(("../")+"`test_pipeline.py"))) covering classification, extraction, graph theory, database persistence, and dashboard markup integrity.
 
 Run the test suite:
 ```powershell

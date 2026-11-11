@@ -4,9 +4,9 @@ Corporate-event intelligence: news is crawled, classified (TF-IDF + Logistic Reg
 (acquirer/target/value/timeline/executives) and turned into a company ownership graph.
 This version wraps the **original, unchanged pipeline** (`src/`, `main.py`) in a **FastAPI REST API** and a modern
 **React + TypeScript** frontend. The original Flask dashboard (`app.py`) is kept for reference; see
-[README_ORIGINAL.md](README_ORIGINAL.md).
+[README_ORIGINAL.md](docs/README_ORIGINAL.md).
 
-## Demo video
+## Demo & presentation
 | | |
 |---|---|
 | 🎥 **Demo video** | https://youtu.be/azqXibAGV-w |
@@ -63,4 +63,4 @@ articles bundled in `data/`.
 Dashboard · News Feed (classified events) · Companies · Company Profile · Relationship Graph (click a company for a full breakdown) ·
 Analytics · Scrape & Analyze (background jobs, live or offline) · Settings (data sources & crawler policy).
 
-More: [ARCHITECTURE.md](ARCHITECTURE.md) · [API_DOCUMENTATION.md](API_DOCUMENTATION.md) · [MIGRATION_REPORT.md](MIGRATION_REPORT.md) · [FEATURE_PARITY.md](FEATURE_PARITY.md) · [DEMO_GUIDE.md](DEMO_GUIDE.md) · [BASELINE_REPORT.md](BASELINE_REPORT.md)
+More: [ARCHITECTURE.md](docs/ARCHITECTURE.md) · [API_DOCUMENTATION.md](docs/API_DOCUMENTATION.md) · [MIGRATION_REPORT.md](docs/MIGRATION_REPORT.md) · [FEATURE_PARITY.md](docs/FEATURE_PARITY.md) · [DEMO_GUIDE.md](docs/DEMO_GUIDE.md) · [BASELINE_REPORT.md](docs/BASELINE_REPORT.md)
