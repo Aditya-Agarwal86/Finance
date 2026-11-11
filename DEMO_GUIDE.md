@@ -1,6 +1,6 @@
 # Demo Guide
 
-Video walkthrough: _YouTube link coming soon_ (see README).
+Video walkthrough: https://youtu.be/azqXibAGV-w
 
 Pre-generated sample output is committed in `output/`, so everything is populated on first start. News Feed and Settings (data sources) pages are included in the tour below.
 

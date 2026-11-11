@@ -7,7 +7,7 @@ This version wraps the **original, unchanged pipeline** (`src/`, `main.py`) in a
 [README_ORIGINAL.md](README_ORIGINAL.md).
 
 ## Demo video
-🎥 **Watch the walkthrough:** _YouTube link coming soon_ <!-- TODO: replace with https://youtu.be/<id> -->
+🎥 **Watch the walkthrough:** https://youtu.be/azqXibAGV-w
 
 The repository ships with pre-generated sample output in `output/` (events, company graph, SQLite database), so the
 dashboard is populated the moment you start the app, with no scraping needed. Use **Scrape & Analyze → Live** to pull fresh articles.
