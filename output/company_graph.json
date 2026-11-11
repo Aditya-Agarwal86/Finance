@@ -1,0 +1,392 @@
+{
+  "nodes": [
+    {
+      "id": "aster foods",
+      "name": "Aster Foods",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 1,
+      "parents": [],
+      "subsidiaries": [
+        "GreenBasket Retail"
+      ]
+    },
+    {
+      "id": "atlas logistics",
+      "name": "Atlas Logistics",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 2,
+      "parents": [],
+      "subsidiaries": [
+        "Pioneer Software Inc",
+        "Harbor Shipping Co"
+      ]
+    },
+    {
+      "id": "bluewave telecom",
+      "name": "Bluewave Telecom",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 1,
+      "parents": [],
+      "subsidiaries": [
+        "Crescent Textiles"
+      ]
+    },
+    {
+      "id": "cedar financial group",
+      "name": "Cedar Financial Group",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 1,
+      "parents": [],
+      "subsidiaries": [
+        "Northstar Payments Ltd"
+      ]
+    },
+    {
+      "id": "crescent textiles",
+      "name": "Crescent Textiles",
+      "type": "Contested Target",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Bluewave Telecom"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "evergreen agro",
+      "name": "Evergreen Agro Ltd",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 1,
+      "parents": [],
+      "subsidiaries": [
+        "Summit Cement Ltd"
+      ]
+    },
+    {
+      "id": "greenbasket retail",
+      "name": "GreenBasket Retail",
+      "type": "Acquired Company",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Aster Foods"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "harbor shipping",
+      "name": "Harbor Shipping Co",
+      "type": "Acquired Company",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Atlas Logistics"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "helios energy",
+      "name": "Helios Energy PLC",
+      "type": "Operating Subsidiary",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Meridian Insurance Co"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "lotus foods",
+      "name": "Lotus Foods Ltd",
+      "type": "Operating Subsidiary",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Quantum Retail Group"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "meridian insurance",
+      "name": "Meridian Insurance Co",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 1,
+      "parents": [],
+      "subsidiaries": [
+        "Helios Energy PLC"
+      ]
+    },
+    {
+      "id": "meridian robotics",
+      "name": "Meridian Robotics",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 1,
+      "parents": [],
+      "subsidiaries": [
+        "Vector Automation"
+      ]
+    },
+    {
+      "id": "northstar payments",
+      "name": "Northstar Payments Ltd",
+      "type": "Merger Partner",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Cedar Financial Group"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "orion steel",
+      "name": "Orion Steel Corp",
+      "type": "Operating Subsidiary",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Titan Chemicals Corp"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "pioneer software",
+      "name": "Pioneer Software Inc",
+      "type": "Operating Subsidiary",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Atlas Logistics"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "quantum retail group",
+      "name": "Quantum Retail Group",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 1,
+      "parents": [],
+      "subsidiaries": [
+        "Lotus Foods Ltd"
+      ]
+    },
+    {
+      "id": "summit cement",
+      "name": "Summit Cement Ltd",
+      "type": "Operating Subsidiary",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Evergreen Agro Ltd"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "summit renewables",
+      "name": "Summit Renewables",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 1,
+      "parents": [],
+      "subsidiaries": [
+        "TerraGrid Solar"
+      ]
+    },
+    {
+      "id": "terragrid solar",
+      "name": "TerraGrid Solar",
+      "type": "Target Entity (Pending)",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Summit Renewables"
+      ],
+      "subsidiaries": []
+    },
+    {
+      "id": "titan chemicals",
+      "name": "Titan Chemicals Corp",
+      "type": "Holding Parent",
+      "in_degree": 0,
+      "out_degree": 1,
+      "parents": [],
+      "subsidiaries": [
+        "Orion Steel Corp"
+      ]
+    },
+    {
+      "id": "vector automation",
+      "name": "Vector Automation",
+      "type": "Target Entity (Pending)",
+      "in_degree": 1,
+      "out_degree": 0,
+      "parents": [
+        "Meridian Robotics"
+      ],
+      "subsidiaries": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "titan chemicals",
+      "target": "orion steel",
+      "source_name": "Titan Chemicals Corp",
+      "target_name": "Orion Steel Corp",
+      "relation": "subsidiary",
+      "evidence": "Documented Ownership",
+      "deal_status": null,
+      "deal_value": null,
+      "former_parent": null,
+      "pct": null,
+      "url": "https://demo.example/article-1",
+      "event_title": "Zenith Motors to acquire Orion Steel for $2.1 billion"
+    },
+    {
+      "source": "meridian insurance",
+      "target": "helios energy",
+      "source_name": "Meridian Insurance Co",
+      "target_name": "Helios Energy PLC",
+      "relation": "subsidiary",
+      "evidence": "Documented Ownership",
+      "deal_status": null,
+      "deal_value": null,
+      "former_parent": null,
+      "pct": null,
+      "url": "https://demo.example/article-2",
+      "event_title": "Apex Pharma and Helios Energy to merge"
+    },
+    {
+      "source": "quantum retail group",
+      "target": "lotus foods",
+      "source_name": "Quantum Retail Group",
+      "target_name": "Lotus Foods Ltd",
+      "relation": "subsidiary",
+      "evidence": "Documented Ownership",
+      "deal_status": null,
+      "deal_value": null,
+      "former_parent": null,
+      "pct": null,
+      "url": "https://demo.example/article-3",
+      "event_title": "Quantum Retail to sell its Lotus Foods unit for Rs 3,500 crore"
+    },
+    {
+      "source": "atlas logistics",
+      "target": "pioneer software",
+      "source_name": "Atlas Logistics",
+      "target_name": "Pioneer Software Inc",
+      "relation": "stake",
+      "evidence": "Equity Stake (60%)",
+      "deal_status": null,
+      "deal_value": null,
+      "former_parent": null,
+      "pct": "60",
+      "url": "https://demo.example/article-9",
+      "event_title": "Atlas Logistics completes acquisition of Harbor Shipping"
+    },
+    {
+      "source": "atlas logistics",
+      "target": "harbor shipping",
+      "source_name": "Atlas Logistics",
+      "target_name": "Harbor Shipping Co",
+      "relation": "completed_acquisition",
+      "evidence": "Completed Acquisition",
+      "deal_status": "Completed",
+      "deal_value": "$95 million",
+      "former_parent": "Redwood Media Group",
+      "pct": null,
+      "url": "https://demo.example/article-9",
+      "event_title": "Atlas Logistics completes acquisition of Harbor Shipping"
+    },
+    {
+      "source": "evergreen agro",
+      "target": "summit cement",
+      "source_name": "Evergreen Agro Ltd",
+      "target_name": "Summit Cement Ltd",
+      "relation": "subsidiary",
+      "evidence": "Documented Ownership",
+      "deal_status": null,
+      "deal_value": null,
+      "former_parent": null,
+      "pct": null,
+      "url": "https://demo.example/article-12",
+      "event_title": "Summit Cement posts record volumes this year"
+    },
+    {
+      "source": "bluewave telecom",
+      "target": "crescent textiles",
+      "source_name": "Bluewave Telecom",
+      "target_name": "Crescent Textiles",
+      "relation": "contested_takeover",
+      "evidence": "Contested Takeover Bid",
+      "deal_status": "Contested / Hostile",
+      "deal_value": "$450 million",
+      "former_parent": null,
+      "pct": null,
+      "url": "https://demo.example/article-4",
+      "event_title": "Bluewave Telecom launches hostile takeover bid for Crescent Textiles"
+    },
+    {
+      "source": "meridian robotics",
+      "target": "vector automation",
+      "source_name": "Meridian Robotics",
+      "target_name": "Vector Automation",
+      "relation": "proposed_acquisition",
+      "evidence": "Proposed Acquisition (Pending Closing)",
+      "deal_status": "Pending Closing",
+      "deal_value": "$620 million",
+      "former_parent": null,
+      "pct": null,
+      "url": "https://demo.example/article-13",
+      "event_title": "Meridian Robotics acquires Vector Automation for $620 million"
+    },
+    {
+      "source": "cedar financial group",
+      "target": "northstar payments",
+      "source_name": "Cedar Financial Group",
+      "target_name": "Northstar Payments Ltd",
+      "relation": "merger_partnership",
+      "evidence": "Proposed Merger Agreement",
+      "deal_status": "Announced",
+      "deal_value": null,
+      "former_parent": null,
+      "pct": null,
+      "url": "https://demo.example/article-14",
+      "event_title": "Cedar Financial and Northstar Payments announce merger"
+    },
+    {
+      "source": "aster foods",
+      "target": "greenbasket retail",
+      "source_name": "Aster Foods",
+      "target_name": "GreenBasket Retail",
+      "relation": "completed_acquisition",
+      "evidence": "Completed Acquisition",
+      "deal_status": "Completed",
+      "deal_value": null,
+      "former_parent": null,
+      "pct": null,
+      "url": "https://demo.example/article-19",
+      "event_title": "Aster Foods completes acquisition of GreenBasket Retail"
+    },
+    {
+      "source": "summit renewables",
+      "target": "terragrid solar",
+      "source_name": "Summit Renewables",
+      "target_name": "TerraGrid Solar",
+      "relation": "proposed_acquisition",
+      "evidence": "Proposed Acquisition (Pending Closing)",
+      "deal_status": "Announced",
+      "deal_value": "$1.4 billion",
+      "former_parent": null,
+      "pct": null,
+      "url": "https://demo.example/article-21",
+      "event_title": "Summit Renewables to acquire TerraGrid Solar in $1.4 billion deal"
+    }
+  ]
+}

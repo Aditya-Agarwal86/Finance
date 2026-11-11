@@ -1,0 +1,194 @@
+[
+  {
+    "company": "Atlas Logistics",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "Harbor Shipping Co",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "completed_acquisition",
+        "pct": null,
+        "former_parent": "Redwood Media Group",
+        "evidence": "Completed Acquisition",
+        "deal_status": "Completed",
+        "deal_value": "$95 million",
+        "source": "https://demo.example/article-9"
+      },
+      {
+        "company": "Pioneer Software Inc",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "stake",
+        "pct": "60",
+        "former_parent": null,
+        "evidence": "Equity Stake (60%)",
+        "deal_status": null,
+        "deal_value": null,
+        "source": "https://demo.example/article-9"
+      }
+    ]
+  },
+  {
+    "company": "Titan Chemicals Corp",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "Orion Steel Corp",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "subsidiary",
+        "pct": null,
+        "former_parent": null,
+        "evidence": "Documented Ownership",
+        "deal_status": null,
+        "deal_value": null,
+        "source": "https://demo.example/article-1"
+      }
+    ]
+  },
+  {
+    "company": "Meridian Insurance Co",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "Helios Energy PLC",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "subsidiary",
+        "pct": null,
+        "former_parent": null,
+        "evidence": "Documented Ownership",
+        "deal_status": null,
+        "deal_value": null,
+        "source": "https://demo.example/article-2"
+      }
+    ]
+  },
+  {
+    "company": "Quantum Retail Group",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "Lotus Foods Ltd",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "subsidiary",
+        "pct": null,
+        "former_parent": null,
+        "evidence": "Documented Ownership",
+        "deal_status": null,
+        "deal_value": null,
+        "source": "https://demo.example/article-3"
+      }
+    ]
+  },
+  {
+    "company": "Evergreen Agro Ltd",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "Summit Cement Ltd",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "subsidiary",
+        "pct": null,
+        "former_parent": null,
+        "evidence": "Documented Ownership",
+        "deal_status": null,
+        "deal_value": null,
+        "source": "https://demo.example/article-12"
+      }
+    ]
+  },
+  {
+    "company": "Bluewave Telecom",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "Crescent Textiles",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "contested_takeover",
+        "pct": null,
+        "former_parent": null,
+        "evidence": "Contested Takeover Bid",
+        "deal_status": "Contested / Hostile",
+        "deal_value": "$450 million",
+        "source": "https://demo.example/article-4"
+      }
+    ]
+  },
+  {
+    "company": "Meridian Robotics",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "Vector Automation",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "proposed_acquisition",
+        "pct": null,
+        "former_parent": null,
+        "evidence": "Proposed Acquisition (Pending Closing)",
+        "deal_status": "Pending Closing",
+        "deal_value": "$620 million",
+        "source": "https://demo.example/article-13"
+      }
+    ]
+  },
+  {
+    "company": "Cedar Financial Group",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "Northstar Payments Ltd",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "merger_partnership",
+        "pct": null,
+        "former_parent": null,
+        "evidence": "Proposed Merger Agreement",
+        "deal_status": "Announced",
+        "deal_value": null,
+        "source": "https://demo.example/article-14"
+      }
+    ]
+  },
+  {
+    "company": "Aster Foods",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "GreenBasket Retail",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "completed_acquisition",
+        "pct": null,
+        "former_parent": null,
+        "evidence": "Completed Acquisition",
+        "deal_status": "Completed",
+        "deal_value": null,
+        "source": "https://demo.example/article-19"
+      }
+    ]
+  },
+  {
+    "company": "Summit Renewables",
+    "is_root": true,
+    "subsidiaries": [
+      {
+        "company": "TerraGrid Solar",
+        "is_root": false,
+        "subsidiaries": [],
+        "relation": "proposed_acquisition",
+        "pct": null,
+        "former_parent": null,
+        "evidence": "Proposed Acquisition (Pending Closing)",
+        "deal_status": "Announced",
+        "deal_value": "$1.4 billion",
+        "source": "https://demo.example/article-21"
+      }
+    ]
+  }
+]

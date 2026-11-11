@@ -1,0 +1,30 @@
+Atlas Logistics
+├── Harbor Shipping Co  [completed_acquisition; formerly under Redwood Media Group]
+└── Pioneer Software Inc  [60% stake]
+
+Titan Chemicals Corp
+└── Orion Steel Corp  [subsidiary]
+
+Meridian Insurance Co
+└── Helios Energy PLC  [subsidiary]
+
+Quantum Retail Group
+└── Lotus Foods Ltd  [subsidiary]
+
+Evergreen Agro Ltd
+└── Summit Cement Ltd  [subsidiary]
+
+Bluewave Telecom
+└── Crescent Textiles  [contested_takeover]
+
+Meridian Robotics
+└── Vector Automation  [proposed_acquisition]
+
+Cedar Financial Group
+└── Northstar Payments Ltd  [merger_partnership]
+
+Aster Foods
+└── GreenBasket Retail  [completed_acquisition]
+
+Summit Renewables
+└── TerraGrid Solar  [proposed_acquisition]

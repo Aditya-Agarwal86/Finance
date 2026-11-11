@@ -36,3 +36,9 @@ ENV/
 .idea/
 *.swp
 *.swo
+
+# Project specific ignores
+extracted-project/
+output/test_*.db
+*.zip
+

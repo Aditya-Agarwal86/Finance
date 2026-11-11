@@ -1,18 +1,22 @@
 """
 Corporate Event Miner - runs the full pipeline:
-  (a) crawl  ->  (b) classify  ->  (c) extract event info  ->  (d) company/subsidiary tree  ->  (e) executive dashboard
+  (a) crawl  ->  (b) classify  ->  (c) extract event info  ->  (d) company/subsidiary tree  ->  (e) executive dashboard  ->  (f) database persistence
 
 Usage:
   python main.py --mode sample          # offline demo with bundled articles
   python main.py --mode live            # crawl real RSS feeds (needs internet)
   python main.py --mode live --per-feed 5
   python main.py --mode sample --retrain
+  python main.py --serve                # launch Flask web application
+  python main.py --query --company Zenith
+  python main.py --query --min-val 1000
 """
 import argparse
 import csv
 import json
 import os
 import sys
+import time
 
 # Ensure UTF-8 output on Windows console
 if sys.platform == "win32":
@@ -22,23 +26,80 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-from src import classifier, crawler, extractor, dashboard
+from src import classifier, crawler, extractor, dashboard, db
 from src.company_tree import CompanyGraph
 
 OUT = "output"
 
 
+def handle_query_mode(args):
+    """Handles terminal-based SQL queries on the historical SQLite database."""
+    db_path = f"{OUT}/corporate_events.db"
+    if not os.path.exists(db_path):
+        print(f"[!] Database not found at {db_path}. Please run 'python main.py --mode sample' first.")
+        return
+
+    print(f"\n=======================================================")
+    print(f"  🔍 SQL HISTORICAL TIMELINE QUERY RUNNER")
+    print(f"  Database: {db_path}")
+    print(f"=======================================================\n")
+
+    results = db.query_events(
+        company=args.company,
+        event_type=args.event_type,
+        min_value_usd_m=args.min_val,
+        max_value_usd_m=args.max_val,
+        status=args.status,
+        keyword=args.keyword,
+        db_path=db_path
+    )
+
+    if not results:
+        print("No matching events found in historical database.")
+        return
+
+    print(f"Found {len(results)} matching records:\n")
+    for r in results:
+        val_str = f" | Val: ${r['numeric_value_usd_m']}M ({r['deal_value']})" if r.get('deal_value') else ""
+        print(f"• [{r['event_type']}] {r['title']}")
+        print(f"   Date: {r.get('event_date')} | Status: {r.get('status')}{val_str}")
+        print(f"   Brief: {r.get('event_brief')}\n")
+
+    stats = db.get_db_stats(db_path)
+    print(f"Total database footprint: {stats['total_events']} events | {stats['database_size_kb']} KB")
+
+
 def main():
-    ap = argparse.ArgumentParser()
+    start_time = time.time()
+    ap = argparse.ArgumentParser(description="Corporate Event Miner - AI-Powered Financial Event Detection")
     ap.add_argument("--mode", choices=["sample", "live"], default="sample")
     ap.add_argument("--per-feed", type=int, default=10)
     ap.add_argument("--retrain", action="store_true", help="retrain classifier")
     ap.add_argument("--serve", action="store_true", help="launch interactive dashboard web app")
+    
+    # Database query arguments
+    ap.add_argument("--query", action="store_true", help="execute SQL query against historical database")
+    ap.add_argument("--company", type=str, help="filter by company name")
+    ap.add_argument("--event-type", type=str, help="filter by event type (ACQUISITION, MERGER, etc.)")
+    ap.add_argument("--min-val", type=float, help="filter by minimum USD valuation in Millions (e.g. 500 for $500M)")
+    ap.add_argument("--max-val", type=float, help="filter by maximum USD valuation in Millions")
+    ap.add_argument("--status", type=str, help="filter by status (Announced, Completed, Contested)")
+    ap.add_argument("--keyword", type=str, help="keyword search across title and brief")
+    ap.add_argument("--export-db", action="store_true", help="export database to JSON")
     args = ap.parse_args()
 
     if args.serve:
         import app as dashboard_app
         dashboard_app.start_server()
+        return
+
+    if args.query:
+        handle_query_mode(args)
+        return
+
+    if args.export_db:
+        exp = db.export_to_json(f"{OUT}/events_db_export.json")
+        print(f"Exported database to {exp}")
         return
 
     os.makedirs(OUT, exist_ok=True)
@@ -61,8 +122,6 @@ def main():
     print(f"\n=======================================================")
     print(f"(b) CLASSIFY: {n_events} of {len(articles)} articles classified as corporate events")
     print(f"=======================================================")
-    # Keep the console feed focused on detected corporate events; routine
-    # non-event articles are silently excluded from the intelligence feed.
     for a in articles:
         if a["is_corporate_event"]:
             print(f"    [EVENT] {a['event_type']:<17} (conf: {a['confidence']:.2f}) | {a['title'][:85]}")
@@ -91,8 +150,6 @@ def main():
                 w.writerow(row)
     except PermissionError:
         alt_csv = f"{OUT}/events_latest.csv"
-        print(f"   [!] Note: {target_csv} is currently locked by another application (e.g., WPS/Excel).")
-        print(f"       Saving updated table to {alt_csv} instead.")
         with open(alt_csv, "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
             w.writeheader()
@@ -131,11 +188,23 @@ def main():
 
     # (e) dashboard
     dash_path = dashboard.generate(articles, events, graph, f"{OUT}/dashboard.html")
-    print(f"=======================================================")
+    print(f"\n=======================================================")
     print(f"(e) DASHBOARD: Interactive presentation dashboard built")
     print(f"    👉 file:///{os.path.abspath(dash_path).replace(os.sep, '/')}")
     print(f"=======================================================")
-    print(f"\nAll outputs successfully saved to ./{OUT}/")
+
+    # (f) database persistence
+    db_path = f"{OUT}/corporate_events.db"
+    ins, upd = db.save_events(events, db_path)
+    hier_count = db.save_hierarchy(graph, db_path)
+    duration = round(time.time() - start_time, 2)
+    db.record_pipeline_run(args.mode, len(articles), len(events), duration, "SUCCESS", db_path=db_path)
+    print(f"\n=======================================================")
+    print(f"(f) DATABASE: Persisted to SQLite ({ins} new, {upd} updated events | {hier_count} hierarchy links)")
+    print(f"    👉 {os.path.abspath(db_path).replace(os.sep, '/')}")
+    print(f"=======================================================")
+
+    print(f"\nAll outputs successfully saved to ./{OUT}/ (Duration: {duration}s)")
 
 
 if __name__ == "__main__":
