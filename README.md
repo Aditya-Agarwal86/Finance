@@ -7,7 +7,12 @@ This version wraps the **original, unchanged pipeline** (`src/`, `main.py`) in a
 [README_ORIGINAL.md](README_ORIGINAL.md).
 
 ## Demo video
-🎥 **Watch the walkthrough:** https://youtu.be/azqXibAGV-w
+| | |
+|---|---|
+| 🎥 **Demo video** | https://youtu.be/azqXibAGV-w |
+| 📊 **Presentation (PPT)** | [docs/Corporate_Event_Miner.pptx](docs/Corporate_Event_Miner.pptx) |
+
+**Team:** Aditya Varshney · Aditya Agarwal · Jawagar K.R  |  **Institution:** VIT-AP University  |  **Guide:** Prof. Gundimeda Venugopal
 
 The repository ships with pre-generated sample output in `output/` (events, company graph, SQLite database), so the
 dashboard is populated the moment you start the app, with no scraping needed. Use **Scrape & Analyze → Live** to pull fresh articles.
